@@ -9,14 +9,14 @@ function App() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/tasklist").then((data) => {
+    axios.get("https://todobackend-5o3r.onrender.com/tasklist").then((data) => {
       setTaskArr(data.data);
     });
   }, []);
 
   const add=()=>{
     if(eTask!==""){
-      axios.post("http://localhost:5000/addtask",{eTask:eTask}).then((data)=>{
+      axios.post("https://todobackend-5o3r.onrender.com/addtask",{eTask:eTask}).then((data)=>{
         setTaskArr([...taskArr,data.data])
       })
      
@@ -24,7 +24,7 @@ function App() {
     }
   const remove=(task,id)=>{
       console.log(task)
-      axios.post("http://localhost:5000/removetask",{task:task})
+      axios.post("https://todobackend-5o3r.onrender.com/removetask",{task:task})
       setTaskArr(taskArr.filter((item)=>{
         return id !== item._id
       }))
