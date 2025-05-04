@@ -8,16 +8,16 @@ function App() {
     setETask(e.target.value);
   };
 // http://localhost:5000/tasklist
-// https://todobackend-5o3r.onrender.com
+// https://todobackend-amfl.onrender.com
   useEffect(() => {
-    axios.get("https://todobackend-5o3r.onrender.com/tasklist").then((data) => {
+    axios.get("https://todobackend-amfl.onrender.com/tasklist").then((data) => {
       setTaskArr(data.data);
     });
   }, []);
 
   const add=()=>{
     if(eTask!==""){
-      axios.post("https://todobackend-5o3r.onrender.com/addtask",{eTask:eTask}).then((data)=>{
+      axios.post("https://todobackend-amfl.onrender.com/addtask",{eTask:eTask}).then((data)=>{
         setTaskArr([...taskArr,data.data])
       })
      
@@ -25,7 +25,7 @@ function App() {
     }
   const remove=(task,id)=>{
       console.log(task)
-      axios.post("https://todobackend-5o3r.onrender.com/removetask",{task:task})
+      axios.post("https://todobackend-amfl.onrender.com/removetask",{task:task})
       setTaskArr(taskArr.filter((item)=>{
         return id !== item._id
       }))
