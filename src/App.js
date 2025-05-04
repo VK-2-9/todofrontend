@@ -19,7 +19,7 @@ function App() {
     if(eTask!==""){
       axios.post("https://todobackend-amfl.onrender.com/addtask",{eTask:eTask}).then((data)=>{
         setTaskArr([...taskArr,data.data])
-        setETask()
+        setETask("")
       })
      
     }
