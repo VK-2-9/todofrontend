@@ -7,7 +7,8 @@ function App() {
   const handleChange = (e) => {
     setETask(e.target.value);
   };
-
+// http://localhost:5000/tasklist
+// https://todobackend-5o3r.onrender.com
   useEffect(() => {
     axios.get("https://todobackend-5o3r.onrender.com/tasklist").then((data) => {
       setTaskArr(data.data);
